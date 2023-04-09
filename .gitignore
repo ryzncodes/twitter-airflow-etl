@@ -1,2 +1,2 @@
 creds.py
-airflow_ec2.key.pem
+airflow_ec2_key.pem

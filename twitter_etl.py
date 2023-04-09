@@ -38,4 +38,4 @@ def run_twitter_etl():
         tweet_list.append(refined_tweet)
 
     df = pd.DataFrame(tweet_list)
-    df.to_csv("azriwalter_twitter_data.csv")
+    df.to_csv("s3://faiz-airflow-twitter-bucket/azriwalter_twitter_data.csv")

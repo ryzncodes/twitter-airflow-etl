@@ -11,11 +11,11 @@
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/ryzncodes/twitter-airflow-etl?color=56BEB8"> 
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{ryzncodes}}/twitter-airflow-etl?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/ryzncodes/twitter-airflow-etl?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{ryzncodes}}/twitter-airflow-etl?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/ryzncodes/twitter-airflow-etl?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/{{ryzncodes}}/twitter-airflow-etl?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/ryzncodes/twitter-airflow-etl?color=56BEB8">
 
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/twitter-airflow-etl?color=56BEB8" /> -->
 
@@ -39,7 +39,7 @@
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{ryzncodes}" target="_blank">Author</a>
+  <a href="https://github.com/ryzncodes" target="_blank">Author</a>
 </p>
 
 <br>

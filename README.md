@@ -92,7 +92,7 @@ ACCESS_TOKEN_SECRET = "ACCESS_TOKEN_SECRET"
 
 ```
 
-### The files above and later in this project are to be saved in a folder. Create a folder called twitter_etl_project and store creds.py inside the folder.
+The files above and later in this project are to be saved in a folder. Create a folder called twitter_etl_project and store creds.py inside the folder.
 
 ## :memo: License ##
 

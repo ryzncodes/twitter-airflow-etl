@@ -69,7 +69,7 @@ The following tools were used in this project:
 
 Before starting :checkered_flag:, you need to have an [AWS Account](https://aws.amazon.com), [Python](https://www.python.org/) installed & sign up for the [Twitter API](https://developer.twitter.com/en/docs/twitter-api).
 
-### :checkered_flag: Starting ###
+# :checkered_flag: Starting #
 
 ```bash
 # Clone this project

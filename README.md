@@ -78,21 +78,17 @@ Before starting :checkered_flag:, you need to have an [AWS Account](https://aws.
 3. From the project dashboard, click on the "Keys and Tokens" tab to access your API keys and tokens.
 4. Generate your access token and secret by clicking the "Generate" button under the "Access token & secret" section.
 5. Copy and save your API keys and tokens in a secure location. These keys will be required to access the Twitter API and should be kept confidential.
+6. Create a file called <b>creds.py</b>, which is where you store your twitter api credentials.
+7. Note that you can directly save your access keys inside your ETL script but it's good practice to keep anything confidential a secret.
 
 ```bash
-# Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/twitter-airflow-etl
+#Replace these keys with your own
 
-# Access
-$ cd twitter-airflow-etl
+API_KEY = "API_KEY"
+API_SECRET_KEY = "API_SECRET_KEY"
+ACCESS_TOKEN = "ACCESS_TOKEN"
+ACCESS_TOKEN_SECRET = "ACCESS_TOKEN_SECRET"
 
-# Install dependencies
-$ yarn
-
-# Run the project
-$ yarn start
-
-# The server will initialize in the <http://localhost:3000>
 ```
 
 ## :memo: License ##

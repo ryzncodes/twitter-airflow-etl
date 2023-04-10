@@ -59,11 +59,11 @@ This project is an ETL (Extract, Transform, Load) pipeline designed to extract d
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [Twitter API](https://developer.twitter.com/en/docs/twitter-api/)
+- [Airflow](https://airflow.apache.org/)
+- [Amazon S3](https://aws.amazon.com/s3/)
+- [Amazon EC2](https://aws.amazon.com/ec2/)
+- [Python](https://www.python.org/)
 
 ## :white_check_mark: Requirements ##
 

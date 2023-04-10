@@ -67,7 +67,7 @@ The following tools were used in this project:
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+Before starting :checkered_flag:, you need to have an [AWS Account](https://aws.amazon.com) and [Python](https://www.python.org/) installed.
 
 ## :checkered_flag: Starting ##
 
@@ -92,7 +92,7 @@ $ yarn start
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/ryzncodes" target="_blank">Faiz Kasman</a>
 
 &#xa0;
 

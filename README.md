@@ -71,6 +71,14 @@ Before starting :checkered_flag:, you need to have an [AWS Account](https://aws.
 
 # :checkered_flag: Starting #
 
+## Part 1: Twitter API ##
+
+1. Go to the "Projects & Apps" tab in the developer dashboard and create a new project by clicking the "Create Project" button.\
+2. Choose the appropriate project type based on your intended use case and follow the prompts to create the project.\
+3. From the project dashboard, click on the "Keys and Tokens" tab to access your API keys and tokens.\
+4. Generate your access token and secret by clicking the "Generate" button under the "Access token & secret" section.\
+5. Copy and save your API keys and tokens in a secure location. These keys will be required to access the Twitter API and should be kept confidential.\
+
 ```bash
 # Clone this project
 $ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/twitter-airflow-etl

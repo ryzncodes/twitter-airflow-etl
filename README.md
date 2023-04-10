@@ -82,7 +82,8 @@ Before starting :checkered_flag:, you need to have an [AWS Account](https://aws.
 7. Note that you can directly save your access keys inside your ETL script but it's good practice to keep anything confidential a secret.
 
 ```bash
-#Replace these keys with your own
+# Replace these keys with your own
+# creds.py
 
 API_KEY = "API_KEY"
 API_SECRET_KEY = "API_SECRET_KEY"

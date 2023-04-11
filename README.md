@@ -304,6 +304,12 @@ By default, the creds.py created using sudo nano is empty, and we are essentiall
 
 3. You did it! You've successfully ran the code from Airflow. This is particularly useful because Airflow is designed to run on a schedule and say if you want to get new data daily, you can run this once everyday.
 
+Obviously there could be several issues that arise during the ETL process that could make it difficult to complete successfully, such as rate limiting by the Twitter API, network connectivity issues, or data quality issues. 
+
+There are also several factors that need to be considered when scheduling ETL jobs, such as the amount of data being processed, the frequency of the data updates, and the resources available for running the ETL job. It is important to carefully consider these factors and adjust the schedule accordingly to ensure that the ETL job runs smoothly and efficiently.
+
+But for now, you have essentially learn how to do ETL jobs!
+
 
 ## :memo: License ##
 

@@ -94,6 +94,54 @@ ACCESS_TOKEN_SECRET = "ACCESS_TOKEN_SECRET"
 
 The files above and later in this project are to be saved in a folder. Create a folder called twitter_etl_project and store creds.py inside the folder.
 
+## Part 2: Creating a Python script ##
+
+Before creating a py script, make sure you install these packages from your command:
+
+```bash
+
+pip3 install pandas # Python package used for data manipulation and analysis.
+pip3 install tweepy # Python package used to interact with the Twitter API.
+pip3 install s3fs # Python package used to interact with Amazon S3 using the file system interface.
+
+```
+
+Create a file called <b>twitter_etl.py</b> inside your twitter_etl_project folder. Make sure it's in the same directory.
+
+1. The documentation for Tweepy can be accessed [here](https://docs.tweepy.org/en/stable/).
+2. Make sure that your sensitive credentials are stored somewhere else if you are planning to make this code public.
+3. For this project <b>.user_timeline</b> is used from the Tweepy package. This will return in a JSON format with alot of key-value pairs. Choose with key you want to do analysis with.
+4. Change the JSON into a list:
+
+```bash
+    tweet_list = []
+    for tweet in tweets:
+        text = tweet._json["full_text"]
+
+        refined_tweet = {'user': tweet.user.screen_name,
+                        'text' : text,
+                        'favorite_count': tweet.favorite_count,
+                        'retweet_count' : tweet.retweet_count,
+                        'created_at' : tweet.created_at}
+        
+        tweet_list.append(refined_tweet)
+```
+5. The tweet_list will be converted into a dataframe & stored into .csv using the pandas package.
+6. For now, store your .csv file in your local machine first:
+
+```bash
+  df = pd.DataFrame(tweet_list)
+  df.to_csv("your_twitter_data.csv") 
+```
+
+7. Run this script in your terminal:
+
+```bash
+python3 twitter_etl.py
+```
+
+
+
 ## :memo: License ##
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.

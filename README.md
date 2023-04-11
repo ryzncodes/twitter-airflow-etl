@@ -131,17 +131,51 @@ Create a file called <b>twitter_etl.py</b> inside your twitter_etl_project folde
 
 ```bash
   df = pd.DataFrame(tweet_list)
-  df.to_csv("your_twitter_data.csv") 
+  df.to_csv("your_twitter_data.csv")
 ```
+7. Add run_twitter_etl() at the end of your code. <b>(To test the script ONLY. Remove it once the script shows no error)</b>
 
-7. Run this script in your terminal:
+8. Run this script in your terminal:
 
 ```bash
 python3 twitter_etl.py
 ```
 
-8. You should now have three files in your folder: <b>creds.py, twitter_etl.py & your_twitter_data.csv!</b>
+9. You should now have three files in your folder: <b>creds.py, twitter_etl.py & your_twitter_data.csv!</b>
 
+## Part 3: Making a DAG script ##
+
+1. Create a python script, twitter_dag.py
+2. Make sure you import the function run_twitter_etl from twitter_etl.py into twitter_dag.py:
+
+```bash
+from datetime import timedelta
+from airflow import DAG # to define a directed acyclic graph (DAG) in Airflow.
+from airflow.operators.python_operator import PythonOperator #execute arbitrary Python code as a task in a DAG.
+from airflow.utils.dates import days_ago 
+from datetime import datetime
+from twitter_etl import run_twitter_etl # importing run_twitter_etl function
+```
+
+3. A dictionary called default_args is defined to provide default configuration options for the DAG, such as the owner, email addresses, and retry settings.
+4. A new instance of the DAG class is created with the ID twitter_dag and the default configuration options from default_args.
+5. A new instance of the PythonOperator class is created with the ID complete_twitter_etl, the Python function run_twitter_etl as the callable to execute, and the DAG object as the parent.
+6. run_etl is an instance of the PythonOperator class, which is a task that executes a Python callable (function) called run_twitter_etl when the DAG is run.
+
+## Part 3: Setting up an S3 bucket ##
+
+1. Once you have an AWS account, go to S3 to create a bucket.
+2. Click the "Create bucket" button to create a new bucket.
+3. Give your bucket a unique name, choose the region where you want to store your data, and click "Next".
+4. Review your settings and click "Create bucket" to create the bucket.
+5. Once the bucket is created, copy the file path e.g. s3://enter_your_bucket_name_here/
+6. Open your twitter_etl.py file and replace the output .csv file into your s3 path:
+
+```bash
+
+df.to_csv("s3://enter_your_bucket_name_here/twitter_data.csv")
+
+```
 
 
 ## :memo: License ##

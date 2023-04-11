@@ -232,6 +232,79 @@ sudo pip install tweepy
 
 Think of your instance as an "empty slate" and is not connected to your local machine. This is why we need to install these packages for our product to work.
 
+## Part 5: Initializing Airflow ##
+
+Now it's time to open up airflow via our instance!
+
+1. Run this command to initialize airflow:
+
+```bash
+airflow standalone
+```
+
+2. After a few minutes you should be able to open up airflow. There should be a username & password as your credentials to the airflow webserver.
+
+3. To open the webserver, use your instance Public IPv4 DNS with the port 8080 & enter this in your browser, e.g. <b>ec2-3-109-207-157.ap-south-1.compute.amazonaws.com:8080 on Chrome/Firefox/IE/Safari</b>
+
+You can get this Public IPv4 at the instance page @ EC2.
+
+4. If you have done everything correctly, you should be in the Airflow login page. Enter your credentials there.
+
+5. Now, click the DAGs tab to see the list of DAG templates provided by Airflow. Our own DAG, twitter_dag.py is not in this list yet because we haven't inserted it inside our instance!
+
+## Part 6: Inserting the DAG into the instance ##
+
+1. If you still have the airflow webserver running in the terminal, press Ctrl+C to terminate it. Now the directory should be your instance IP. If you closed your connection to your instance, just follow Part 4.2.3 to connect back.
+
+2. Type "ls" to see the instance home directory and see what files are inside. There should be one, called airflow.
+
+3. Go into the folder by typing "cd airflow" & type "ls" again.
+
+4. There are multiple files inside this folder but what we want to focus on is the <b>airflow.cfg</b> file.
+
+5. Write "sudo nano airflow.cfg". This will enable us to modify the contents inside airflow.cfg.
+
+6. For now, the only thing that you should change in this file is the "dags_folder" path. Change it to:
+
+```bash
+dags_folder = /home/ubuntu/airflow/twitter_dag
+```
+
+This variable is used by Airflow to locate your DAG files when it starts up. By default, Airflow looks for DAG files in the dags_folder directory.
+
+7. Press Ctrl+X and Enter to save the modification.
+
+8. Now we want to create the twitter_dag folder and store all of our python scripts inside that folder. Type "mkdir twitter_dag" and ls to check if it's created. If it exists, cd into twitter_dag.
+
+9. There are three python scripts that we want to insert here. But we can't actually drag those files into the instance, so we use sudo nano instead.
+
+10. "sudo nano creds.py" into your terminal, copy the contents of creds.py and paste it into the terminal. Press Ctrl+X and Enter to save the modification.
+
+By default, the creds.py created using sudo nano is empty, and we are essentially pasting the code we did in our local machine to the file inside the instance.
+
+11. Do the previous step with twitter_dag.py & twitter_etl.py.
+
+12. Check the three files if they are created correctly or not. Congrats!
+
+## Part 7: Running the DAG ##
+
+1. Now, make sure your terminal is on the root directory of the instance and open up airflow again by the <b>airflow standalone</b> command.
+
+2. When you open up your DAGs tab in the airflow, there should be a DAG called twitter_dag now! Click on the DAG to see the graph, code, grid & etc.
+
+3. To run the dag, go to the graph tab, click on the task, complete-twitter-etl and click on the Play button around the top-right corner.
+
+4. Your DAG is now queued and will run the code you provided inside. Yay!
+
+## Part Final : Checking if the output goes to S3 ##
+
+1. The hard part is done, hopefully. Go to your S3 bucket that you pointed earlier inside your code.
+
+2. When you refresh your bucket, there should be the .csv file inside the bucket now.
+
+3. You did it! You've successfully ran the code from Airflow. This is particularly useful because Airflow is designed to run on a schedule and say if you want to get new data daily, you can run this once everyday.
+
+
 ## :memo: License ##
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.

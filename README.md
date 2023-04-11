@@ -177,6 +177,28 @@ df.to_csv("s3://enter_your_bucket_name_here/twitter_data.csv")
 
 ```
 
+## Part 4: Creating an instance from EC2
+
+1. Go to the EC2 service and click on "Launch an instance"
+2. Give it a name, choose the Ubuntu OS & t3.medium instance type.
+3. Please be noted that t3.medium is not free, but the free tier, t2.micro is very slow when running Airflow. Just remember to stop your instance once you are done with this project!
+4. Create a key pair and you'll be given a .pem file containing the key pair. This is important as this will allow you to connect with the instance.
+5. Allow SSH,HTTPS & HTTP traffic from the internet. Launch your instance!
+
+## Part 4.1: IAM Role & Security Groups - EC2 ##
+
+To enable our EC2 instance to connect from our IP/local machine & instance have permission to access the S3 bucket, we have to give it permissions.
+
+1. Click on the Instance ID of the instance you've created, go to the Security tab and click on the IAM Role. This will redirect you to the IAM page.
+2. Create a role, choose AWS service and EC2 as our use case.
+3. Search for "AmazonEC2FullAccess" & "AmazonS3FullAccess"
+4. This role will enable full access to EC2 & S3 service for this instance.
+5. Now, going back to the security tab, click the security group link.
+6. Edit inbound rules and add rule.
+7. This is not recommended and not the best practice, but for the sake of this project, select <b>Type: All traffic, Source: My IP</b> and save the rules.
+
+## Part 4.2: Installing packages on the instance ##
+
 
 ## :memo: License ##
 

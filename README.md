@@ -197,8 +197,40 @@ To enable our EC2 instance to connect from our IP/local machine & instance have 
 6. Edit inbound rules and add rule.
 7. This is not recommended and not the best practice, but for the sake of this project, select <b>Type: All traffic, Source: My IP</b> and save the rules.
 
-## Part 4.2: Installing packages on the instance ##
+## Part 4.2: Connecting to the instance ##
 
+1. In the EC2 homepage, select the EC2 instance that you've created and click on connect. It will redirect you to a set of instructions on how to connect to your instance via SSH
+2. Open your terminal and make sure you are in the .pem file directory.
+3. Run this command:
+```bash
+
+chmod 400 YOUR_PEM_KEY.pem
+ssh -i "YOUR_PEM_KEY.pem" ubuntu@....INSTANCE_PUBLIC_DNS..compute.amazonaws.com
+
+```
+
+4. If successful, you should see something like this in the terminal:
+
+```bash
+ubuntu@ip-145-31-3-39:~$
+```
+
+5. Congrats! You have successfully connected to your instance.
+
+6. Run these commands to install python packages needed for this project:
+
+```bash
+
+sudo apt-get update
+sudo apt install python3-pip
+sudo pip install apache-airflow
+sudo pip install pandas
+sudo pip install s3fs
+sudo pip install tweepy
+
+```
+
+Think of your instance as an "empty slate" and is not connected to your local machine. This is why we need to install these packages for our product to work.
 
 ## :memo: License ##
 

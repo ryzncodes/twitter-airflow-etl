@@ -140,6 +140,8 @@ Create a file called <b>twitter_etl.py</b> inside your twitter_etl_project folde
 python3 twitter_etl.py
 ```
 
+8. You should now have three files in your folder: <b>creds.py, twitter_etl.py & your_twitter_data.csv!</b>
+
 
 
 ## :memo: License ##
